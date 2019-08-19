@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+
+    <script type="text/javascript">
+        function baseFunction() {
+            var btn = document.getElementById("#btn");
+
+            if (btn !== null) 
+                btn.addEventListener("click", showInput);
+        }
+
+        function showInput() {
+            var elem = document.querySelector("#firstName");
+            if (elem !== null) {
+                var firstName = elem.value;
+                alert(firstName);
+            }
+        }
+
+        window.addEventListener("load", createAndRenderElement);
+
+        function createAndRenderElement() {
+            var div = document.createElement("div");
+            div.innerText = "I have created div dynamically";
+            div.setAttribute("class", "content");
+            alert(div.getAttribute("class"));
+            document.getElementById("displayText").append(div);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="firstName" />
+    <input type="button" id="btn" value="show alert">
+    <div id="displayText"></div>
+</body>
+</html>
